@@ -5,7 +5,7 @@ import yaml
 from ultralytics import YOLO
 
 class ObjectDetection:
-    def __init__(self, model_name="yolov9n.pt", data_dir="data", test_dir="test_outputs"):
+    def __init__(self, model_name="model/yolov9n.pt", data_dir="data", test_dir="test_outputs"):
         self.model_name = model_name
         self.data_dir = data_dir
         self.test_dir = test_dir
@@ -40,7 +40,6 @@ class ObjectDetection:
 
         Args:
             data_dir (str): Path to the root directory of the dataset.
-            data_config_path (str): Path to the dataset configuration YAML file.
 
         Raises:
             ValueError: If any validation check fails.
@@ -99,7 +98,7 @@ class ObjectDetection:
     
 
 
-    def load_model(self, pretrained_model = "Yolov9_Training/yolov9e.pt"):
+    def load_model(self, pretrained_model = "model/yolov9e.pt"):
         """Loads the YOLOv9 model."""
         self.model = YOLO(pretrained_model)
         
@@ -177,16 +176,15 @@ class ObjectDetection:
 if __name__ == "__main__":
 
     # Example usage (replace with your actual paths)
-    data_dir = "Dataset"
-    data_config_path = "Dataset/data.yaml"
+    data_dir = os.path.join(os.path.dirname(__file__), "Dataset")
     od = ObjectDetection()
 
     try:
-        # od.load_dataset(data_dir)
-        # od.load_model("model/best.pt")
-        # od.train()
+        od.load_dataset(data_dir)
+        od.load_model("model/best.pt")
+        od.train()
         # od.model_prediction("model/best.pt", "Dataset/test/images/img_01_4402724300_00001_jpg.rf.7bcfacc21bccbec82f4e03e748484b35.jpg")
-        od.predict_multiple("model/best.pt", "Dataset/test/images")
+        # od.predict_multiple("model/best.pt", "Dataset/test/images")
         
     except ValueError as e:
         print(f"Dataset format validation error: {e}")

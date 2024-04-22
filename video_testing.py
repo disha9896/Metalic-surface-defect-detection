@@ -1,5 +1,4 @@
 from defect_detection import ObjectDetection
-from ultralytics import YOLO
 import cv2
 import math 
 # start webcam
@@ -7,23 +6,23 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
-# model
-model = YOLO()
+od = ObjectDetection()
+od.load_model("model/best.pt")
 
 # object classes
 classNames = ["crease", "crescent_gap", "d" ,"inclusion", "oil_spot","punching_hole",
                "rolled_pit", "silk_spot","waist folding","water_spot","welding_line"]
 
-cam = cv2.VideoCapture(r"Z:\Disha\Defect_detection\videos\2024-04-09_10-36-32.mp4") 
+cam = cv2.VideoCapture(r"video_frames/2024-04-09_10-36-32.mp4") 
 frameTime = 20
 success, img = cam.read()
 height, width, layers = img.shape
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-video = cv2.VideoWriter(r"Z:\Disha\Defect_detection\Results\videos\output2.avi", fourcc, 20.0, (width, height))
+video = cv2.VideoWriter(r"Results\videos\output2.avi", fourcc, 20.0, (width, height))
 
 while(cam.isOpened()):
     success, img = cam.read()
-    results = model(img, stream=True)
+    results = od.model(img, stream=True)
 
     # coordinates
     for r in results:
@@ -39,11 +38,9 @@ while(cam.isOpened()):
 
             # confidence
             confidence = math.ceil((box.conf[0]*100))/100
-            print("Confidence --->",confidence)
 
             # class name
             cls = int(box.cls[0])
-            print("Class name -->", classNames[cls])
 
             # object details
             org = [x1, y1]
