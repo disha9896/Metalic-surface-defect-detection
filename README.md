@@ -13,4 +13,10 @@ Steps to run the project :
 2. Test the performance of the model by running the model_prediction and predict_multiple functions
 3. Run the video_testing.py to see how it works on video
 
-model folder containes best.pt that is the best model to predict values.
+model folder containes best.pt that is the best model to do prediction. Yolov9e.pt is the pre trained model 
+
+Steps to train the model :
+1. Add the dataset directory path.
+2. Load the pre-trained yolov9e.pt model from the model folder.
+3. Run the train function to train the model. 
+4. It will store the validation resuls, detected results and the model in the run/detect/train folder.

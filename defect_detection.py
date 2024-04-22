@@ -13,10 +13,6 @@ class ObjectDetection:
         self.model = None
         self.classes = None
 
-    def data_preprocessing(self):
-        """Resize images and convert then to gray scale 
-        """
-        pass
 
     def load_dataset(self, dataset_path):
         """Load dataset from directory 
@@ -43,6 +39,9 @@ class ObjectDetection:
 
         Raises:
             ValueError: If any validation check fails.
+
+        Returns:
+            returns the data_config path the data.yaml path for the model to train of it.
         """
         # check all the required folder are present in the folder
         required_folders = ['train', 'valid', 'test']
@@ -150,7 +149,6 @@ class ObjectDetection:
             keypoints = result.keypoints  # Keypoints object for pose outputs
             probs = result.probs  # Probs object for classification outputs
             result.show()  # display to screen
-            # result.save(filename='/home/dssgis/Results/capture.jpg')  # save to disk
     
 
     def predict_multiple(self, model, folder_path, result_path="results"):
@@ -168,20 +166,21 @@ class ObjectDetection:
                 masks = result.masks  # Masks object for segmentation masks outputs
                 keypoints = result.keypoints  # Keypoints object for pose outputs
                 probs = result.probs  # Probs object for classification outputs
-                # result.show()  # display to screen
                 result.save(filename=os.path.join("results",file))  # save to disk
 
             
 
 if __name__ == "__main__":
 
-    # Example usage (replace with your actual paths)
     data_dir = os.path.join(os.path.dirname(__file__), "Dataset")
     od = ObjectDetection()
 
     try:
+        # load the dataset 
         od.load_dataset(data_dir)
+        #load the pre-trained model
         od.load_model("model/best.pt")
+        #start training
         od.train()
         # od.model_prediction("model/best.pt", "Dataset/test/images/img_01_4402724300_00001_jpg.rf.7bcfacc21bccbec82f4e03e748484b35.jpg")
         # od.predict_multiple("model/best.pt", "Dataset/test/images")
