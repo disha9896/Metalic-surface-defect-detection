@@ -20,3 +20,5 @@ Steps to train the model :
 2. Load the pre-trained yolov9e.pt model from the model folder.
 3. Run the train function to train the model. 
 4. It will store the validation resuls, detected results and the model in the run/detect/train folder.
+
+Use the best.pt model to predict results as it is trained properly with all the images the dataset here is just a sample dataset for you to try and train the model whole dataset link is provided above. The training for complete dataset requires GPU and takes more time to train.

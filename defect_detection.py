@@ -98,7 +98,9 @@ class ObjectDetection:
 
 
     def load_model(self, pretrained_model = "model/yolov9e.pt"):
-        """Loads the YOLOv9 model."""
+        """Load model can be used to load the pre-trained model for model training
+            and can be used after training to predict the results        
+        """
         self.model = YOLO(pretrained_model)
         
 
