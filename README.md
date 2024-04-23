@@ -14,21 +14,18 @@ The dataset is stored in the dataset folder divided into train, test and valid f
    Homebrew:  `brew install git-lfs`
    MacPorts: `port install git-lfs`
             
-Then pull from the git repo using the command :
-```
-git lfs pull
-```
+   Then pull from the git repo using the command :
+   ```
+   git lfs pull
+   ```
 
-
-
-Steps to run the project :
+## File Information
 1. Run the defect_detection to train the model
 2. Test the performance of the model by running the model_prediction and predict_multiple functions
 3. Run the video_testing.py to see how it works on video
+4. The model folder contains the best.pt which is the best model to do prediction and Yolov9e.pt is the pre-trained model 
 
-model folder containes best.pt that is the best model to do prediction. Yolov9e.pt is the pre trained model 
-
-Steps to train the model :
+## Steps to Train the Model
 1. Add the dataset directory path.
 2. Load the pre-trained yolov9e.pt model from the model folder.
 3. Run the train function to train the model. 
