@@ -11,8 +11,8 @@ The dataset is stored in the dataset folder divided into train, test and valid f
     pip install -r requirements.txt 
     ```
 3. Install git lfs to use the large files i.e. models in the repository.
-   Homebrew:  ```brew install git-lfs
-   MacPorts: ```port install git-lfs
+   Homebrew:  `brew install git-lfs`
+   MacPorts: `port install git-lfs`
             
 Then pull from the git repo using the command :
 ```
