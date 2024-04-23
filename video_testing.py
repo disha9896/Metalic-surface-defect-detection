@@ -1,10 +1,6 @@
 from defect_detection import ObjectDetection
 import cv2
 import math 
-# start webcam
-cap = cv2.VideoCapture(0)
-cap.set(3, 640)
-cap.set(4, 480)
 
 od = ObjectDetection()
 od.load_model("model/best.pt")
