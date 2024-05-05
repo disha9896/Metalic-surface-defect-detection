@@ -1,21 +1,31 @@
 # Metalic-surface-defect-detection
 
-Purpose of the project is to detect the defects on a metalic surface. The dataset was taken from Kaggle https://www.kaggle.com/datasets/alex000kim/gc10det 
+The project aims to detect the defects on a metallic surface. The dataset was taken from Kaggle https://www.kaggle.com/datasets/alex000kim/gc10det 
 
-Dataset is stored in the dataset folder divided in train, test and valid folders with images and labels. 
+The dataset is stored in the dataset folder divided into train, test and valid folders with images and labels. 
 
-There is a requirements.txt file in the directory run that to install all the neccesary libraries to run the project. 
+## Setup Instructions
+1. Make sure you have python installed in your system
+2. Install required libraries by running following code. requirements.txt file in present in the repository
+   ```
+    pip install -r requirements.txt 
+    ```
+3. Install git lfs to use the large files i.e. models in the repository.
+   Homebrew:  `brew install git-lfs`
+   MacPorts: `port install git-lfs`
+            
+   Then pull from the git repo using the command :
+   ```
+   git lfs pull
+   ```
 
-commond to install all the libraries : pip install -r requirements.txt
-
-Steps to run the project :
+## File Information
 1. Run the defect_detection to train the model
 2. Test the performance of the model by running the model_prediction and predict_multiple functions
 3. Run the video_testing.py to see how it works on video
+4. The model folder contains the best.pt which is the best model to do prediction and Yolov9e.pt is the pre-trained model 
 
-model folder containes best.pt that is the best model to do prediction. Yolov9e.pt is the pre trained model 
-
-Steps to train the model :
+## Steps to Train the Model
 1. Add the dataset directory path.
 2. Load the pre-trained yolov9e.pt model from the model folder.
 3. Run the train function to train the model. 
