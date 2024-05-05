@@ -27,10 +27,13 @@ This sample dataset will help to train a sample model.
    ```
 
 ## File Information
-1. Run the train_demo to train the model
-2. Test the performance of the model by running the model_prediction and predict_multiple functions
-3. Run the video_testing.py to see how it works on video
-4. The model folder contains the best.pt which is the best model to do prediction and Yolov9e.pt is the pre-trained model 
+1. defect_detection file contains the class to train the model and do model prediction. 
+2. Dataset folder contains sample images and labels to train the model.
+3. results folder stores the results after prediction.
+4. after training runs/train contains the trained model and validations.
+5. Validation_results folder contains the graphs and predicted images of the trained model of best.pt
+6. Model folder contains best.pt file which is the model to detect the defects.
+7. Yolov9e.pt is the pre-trained model in the model folder which is used to train the new custome model. 
 
 
 
