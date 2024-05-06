@@ -1,3 +1,8 @@
+"""
+Predict multiple images. Pass folder of images and get results with detected defects on it. 
+Give a specific path to store the results otherwise it will be stored in the pre determined path.
+"""
+
 from defect_detection import ObjectDetection
 import os
 

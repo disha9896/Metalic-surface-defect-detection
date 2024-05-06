@@ -1,3 +1,7 @@
+"""
+mimicking real time video defect detection process by adding a video and storeing the defects detected video.
+"""
+
 from defect_detection import ObjectDetection
 import cv2
 import math 

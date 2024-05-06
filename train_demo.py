@@ -1,3 +1,7 @@
+"""
+Yolov9 model training code
+"""
+
 from defect_detection import ObjectDetection
 import os
 

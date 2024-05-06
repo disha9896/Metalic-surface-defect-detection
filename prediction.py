@@ -1,4 +1,5 @@
 # prediction on a specific image
+
 from defect_detection import ObjectDetection
 import os
 

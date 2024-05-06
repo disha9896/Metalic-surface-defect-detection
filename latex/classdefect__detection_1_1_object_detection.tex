@@ -1,0 +1,140 @@
+\doxysection{defect\+\_\+detection.\+Object\+Detection Class Reference}
+\hypertarget{classdefect__detection_1_1_object_detection}{}\label{classdefect__detection_1_1_object_detection}\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_a06ae490e60338b558dd7a99fdb7fa804}\label{classdefect__detection_1_1_object_detection_a06ae490e60338b558dd7a99fdb7fa804} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, model\+\_\+name="{}model/yolov9n.\+pt"{}, data\+\_\+dir="{}data"{}, test\+\_\+dir="{}test\+\_\+outputs"{})
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a5222bba60db0395fee03178d37cd8d04}{load\+\_\+dataset}} (self, dataset\+\_\+path)
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a2dfd1f28cfcbb67847ef0c4267d204f7}{validate\+\_\+dataset}} (self, data\+\_\+dir)
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_ab1cb7f33af01b58c656e4f7304055219}{load\+\_\+model}} (self, pretrained\+\_\+model="{}model/yolov9e.\+pt"{})
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a57c46a40b8b1ddd0015eb404e69d6988}{train}} (self, epochs=1, batch=-\/1, imgsz=640)
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a792f33805bd6d13920b6d84f29109327}{restart\+\_\+training}} (self, saved\+\_\+weights=\textquotesingle{}runs/detect/train7/weights/last.\+pt\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a5965253a0356d557f392e95992b60286}{model\+\_\+prediction}} (self, model, image\+\_\+path)
+\item 
+\mbox{\hyperlink{classdefect__detection_1_1_object_detection_a406b04cb985e5f43b20ae6f968e995e7}{predict\+\_\+multiple}} (self, model, folder\+\_\+path, result\+\_\+path="{}results"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_a709bd49dd0d8b41419e0261024895d33}\label{classdefect__detection_1_1_object_detection_a709bd49dd0d8b41419e0261024895d33} 
+{\bfseries model\+\_\+name}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_a652f32f65ecded3a3b877c3852ffc349}\label{classdefect__detection_1_1_object_detection_a652f32f65ecded3a3b877c3852ffc349} 
+{\bfseries data\+\_\+dir}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_a779c0063dac1f010e6b3b5a6d549b169}\label{classdefect__detection_1_1_object_detection_a779c0063dac1f010e6b3b5a6d549b169} 
+{\bfseries test\+\_\+dir}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_af90e124b6e82b4de0b13f8f4eead7d7f}\label{classdefect__detection_1_1_object_detection_af90e124b6e82b4de0b13f8f4eead7d7f} 
+{\bfseries data\+\_\+config}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_ae0445aec7def2aa3db9542609ef087fe}\label{classdefect__detection_1_1_object_detection_ae0445aec7def2aa3db9542609ef087fe} 
+{\bfseries model}
+\item 
+\Hypertarget{classdefect__detection_1_1_object_detection_acae355c0005995db3442c218783389de}\label{classdefect__detection_1_1_object_detection_acae355c0005995db3442c218783389de} 
+{\bfseries classes}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdefect__detection_1_1_object_detection_a5222bba60db0395fee03178d37cd8d04}\label{classdefect__detection_1_1_object_detection_a5222bba60db0395fee03178d37cd8d04} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!load\_dataset@{load\_dataset}}
+\index{load\_dataset@{load\_dataset}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{load\_dataset()}{load\_dataset()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+load\+\_\+dataset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load dataset from directory 
+
+Args:
+    dataset_path : path to the dataset containing images, labels and yaml 
+
+Raises:
+    ValueError: If the dataset URL is invalid or the download fails.
+\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_ab1cb7f33af01b58c656e4f7304055219}\label{classdefect__detection_1_1_object_detection_ab1cb7f33af01b58c656e4f7304055219} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!load\_model@{load\_model}}
+\index{load\_model@{load\_model}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{load\_model()}{load\_model()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+load\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pretrained\+\_\+model = {\ttfamily "{}model/yolov9e.pt"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load model can be used to load the pre-trained model for model training
+    and can be used after training to predict the results        
+\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_a5965253a0356d557f392e95992b60286}\label{classdefect__detection_1_1_object_detection_a5965253a0356d557f392e95992b60286} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!model\_prediction@{model\_prediction}}
+\index{model\_prediction@{model\_prediction}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{model\_prediction()}{model\_prediction()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+model\+\_\+prediction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{model,  }\item[{}]{image\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Predict the values of the trained model. First load the model using load_model function
+\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_a406b04cb985e5f43b20ae6f968e995e7}\label{classdefect__detection_1_1_object_detection_a406b04cb985e5f43b20ae6f968e995e7} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!predict\_multiple@{predict\_multiple}}
+\index{predict\_multiple@{predict\_multiple}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{predict\_multiple()}{predict\_multiple()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+predict\+\_\+multiple (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{model,  }\item[{}]{folder\+\_\+path,  }\item[{}]{result\+\_\+path = {\ttfamily "{}results"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Predict the images in the folder and store those images to results folder
+\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_a792f33805bd6d13920b6d84f29109327}\label{classdefect__detection_1_1_object_detection_a792f33805bd6d13920b6d84f29109327} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!restart\_training@{restart\_training}}
+\index{restart\_training@{restart\_training}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{restart\_training()}{restart\_training()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+restart\+\_\+training (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{saved\+\_\+weights = {\ttfamily \textquotesingle{}runs/detect/train7/weights/last.pt\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start training the model from where you left at last. 
+
+Args:
+    saved_weights - After training the model it will store the last state of
+    the trained model in runs/detect/train/weights/last.pt This will be stored
+    in the working directory.\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_a57c46a40b8b1ddd0015eb404e69d6988}\label{classdefect__detection_1_1_object_detection_a57c46a40b8b1ddd0015eb404e69d6988} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!train@{train}}
+\index{train@{train}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+train (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{epochs = {\ttfamily 1},  }\item[{}]{batch = {\ttfamily -\/1},  }\item[{}]{imgsz = {\ttfamily 640} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train the yolo model on pre trained yolov9e model. 
+After training this function will store following components in the run/detect/train folder
+- weights 
+    - Last.pt (latest trained model)
+    - best.pt (best out of the trained model)
+- Different model validation graphs.
+- Different performance metrics in the excel file.
+- sample detected images.
+
+Args:
+    epochs (int) : Number of epochs you want to use to train the model
+    batch (int) : specify the batch size to train the model
+    imgsz (int) : size of the image
+    save_dir (str) : save the logs of the file at that path
+\end{DoxyVerb}
+ \Hypertarget{classdefect__detection_1_1_object_detection_a2dfd1f28cfcbb67847ef0c4267d204f7}\label{classdefect__detection_1_1_object_detection_a2dfd1f28cfcbb67847ef0c4267d204f7} 
+\index{defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}!validate\_dataset@{validate\_dataset}}
+\index{validate\_dataset@{validate\_dataset}!defect\_detection.ObjectDetection@{defect\_detection.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{validate\_dataset()}{validate\_dataset()}}
+{\footnotesize\ttfamily defect\+\_\+detection.\+Object\+Detection.\+validate\+\_\+dataset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validates the dataset format for YOLOv9 based on the specified structure.
+
+Args:
+    data_dir (str): Path to the root directory of the dataset.
+
+Raises:
+    ValueError: If any validation check fails.
+
+Returns:
+    returns the data_config path the data.yaml path for the model to train of it.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Metalic-\/surface-\/defect-\/detection/defect\+\_\+detection.\+py\end{DoxyCompactItemize}
