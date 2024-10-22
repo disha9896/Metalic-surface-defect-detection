@@ -1,11 +1,11 @@
-task: detect
+task: segment
 mode: train
-model: runs/detect/train6/weights/last.pt
-data: /home/dssgis/ondemand/Yolov9_training/Dataset_split/data.yaml
+model: /home/dssgis/Training_segmentation/pre-trained/yolov8s-seg.pt
+data: /home/dssgis/Training_segmentation/Dataset/Datasetv8_yolov8/data.yaml
 epochs: 100
 time: null
 patience: 100
-batch: 2
+batch: 16
 imgsz: 640
 save: true
 save_period: -1
@@ -13,7 +13,7 @@ cache: false
 device: null
 workers: 8
 project: null
-name: train6
+name: train4
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -76,7 +76,7 @@ momentum: 0.937
 weight_decay: 0.0005
 warmup_epochs: 3.0
 warmup_momentum: 0.8
-warmup_bias_lr: 0.0
+warmup_bias_lr: 0.1
 box: 7.5
 cls: 0.5
 dfl: 1.5
@@ -95,7 +95,7 @@ perspective: 0.0
 flipud: 0.0
 fliplr: 0.5
 bgr: 0.0
-mosaic: 0.0
+mosaic: 1.0
 mixup: 0.0
 copy_paste: 0.0
 auto_augment: randaugment
@@ -103,4 +103,4 @@ erasing: 0.4
 crop_fraction: 1.0
 cfg: null
 tracker: botsort.yaml
-save_dir: runs/detect/train6
+save_dir: runs/segment/train4
