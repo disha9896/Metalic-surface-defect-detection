@@ -5,7 +5,7 @@ The goal of this project is to develop an automated inspection process with prec
 
 ## Dataset
 
-Training of the defect detection was done using the kaggle dataset which can be downloaded using this link https://www.kaggle.com/datasets/alex000kim/gc10det. Scratch detection dataset was downloaded from https://www.kaggle.com/datasets/fantacher/neu-metal-surface-defects-data/data this dataset did not have labels so need to annotate them. 
+The Initial training of the defect detection was done using the kaggle dataset which can be downloaded using this link https://www.kaggle.com/datasets/alex000kim/gc10det. Further more a Scratch detection dataset was downloaded from https://www.kaggle.com/datasets/fantacher/neu-metal-surface-defects-data/data this dataset did not have labels so need to annotate them along with this a custom manually collected images dataset was created. 
 
 A sample dataset from the original dataset is stored in the dataset folder which is divided into train, test and valid folder. It also contains the labels(annotations) and data.yml file which help to locate the images and the labels for training.
 
